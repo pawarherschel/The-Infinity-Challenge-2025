@@ -3,7 +3,7 @@ extends Node2D
 @onready var aimer: Line2D = %BallAimer
 @onready var lose_area: Area2D = %LoseArea
 @onready var walls: Node2D = %Walls
-const Ball: PackedScene = preload("res://scenes/gameplay/pachinko/ball/ball.tscn")
+const Ball: PackedScene    = preload("res://scenes/gameplay/pachinko/ball/ball.tscn")
 enum State {
 	AIMING,
 	FIRED,

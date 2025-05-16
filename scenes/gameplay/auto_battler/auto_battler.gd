@@ -4,6 +4,7 @@ extends Node2D
 @onready var player_attack_timer: Timer = %PlayerAttackTimer
 @onready var enemy_manager: Node2D = %EnemyManager
 
+
 func _ready() -> void:
 	player_attack_timer.wait_time = 1.0 / Singleton.pegs_hit if Singleton.pegs_hit > 0 else 1.0
 	player_attack_timer.start(player_attack_timer.wait_time)

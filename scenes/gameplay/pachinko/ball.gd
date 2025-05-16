@@ -1,14 +1,12 @@
 extends RigidBody2D
 
 @export var reflect_impulse_magnitude: float = 1500
-
 const particle_system = preload("res://assets/particle_system/gpu_particles_2d.tscn")
-
 var velocity: Vector2 = Vector2.ZERO
 var stuck: bool       = false
 var stuck_number: int = 0
-
 signal ball_stuck
+
 
 func _on_body_entered(body_: Node2D) -> void:
 	if body_.is_in_group("PlayArea"):
@@ -17,7 +15,7 @@ func _on_body_entered(body_: Node2D) -> void:
 		var shape_normal: Vector2      = Vector2.from_angle(collider.global_transform.get_rotation())
 		var direction: Vector2         = velocity.reflect(shape_normal).normalized()
 		self.apply_central_impulse(direction * reflect_impulse_magnitude)
-	
+
 	if body_.is_in_group("Peg"):
 		var body: StaticBody2D         = body_
 		var collider: CollisionShape2D = body.get_node("CollisionShape2D")
@@ -30,22 +28,21 @@ func _on_body_entered(body_: Node2D) -> void:
 		#print("direction: ", direction)
 		self.apply_central_impulse(direction * reflect_impulse_magnitude)
 		Singleton.pegs_hit += 1
-		
+
 		var particles_instance1 = particle_system.instantiate()
 		var particles_instance2 = particle_system.instantiate()
-		
+
 		particles_instance1.look_at(self.position)
 		particles_instance2.look_at(body.position)
-		
+
 		particles_instance1.emitting = true
 		particles_instance2.emitting = true
-		
+
 		particles_instance1.global_position = self.global_position
 		particles_instance2.global_position = self.global_position
-		
+
 		self.add_sibling(particles_instance1)
 		self.add_sibling(particles_instance2)
-		
 
 
 func _physics_process(_delta: float) -> void:
@@ -76,6 +73,7 @@ func _ready() -> void:
 		pass
 	#aimer.add_point(Vector2.RIGHT * 200)
 	pass
+
 
 func _on_ball_stuck() -> void:
 	_on_lose_area_body_entered(null)

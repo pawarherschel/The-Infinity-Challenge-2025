@@ -2,9 +2,7 @@ extends Node2D
 
 @export var distance: float = 50.0
 @export var ball_radius: float = 25.0
-
 const peg_scn: PackedScene = preload("res://scenes/gameplay/pachinko/peg/peg.tscn")
-
 @onready var tl: Vector2 = %TL.position + Vector2(ball_radius*3, ball_radius*1.5)
 @onready var tr_: Vector2 = %TR.position + Vector2(-ball_radius*3, ball_radius*1.5)
 @onready var bl: Vector2 = %BL.position + Vector2(ball_radius*3, -ball_radius*1.5)
@@ -21,7 +19,7 @@ func _ready() -> void:
 		for j in range(floor(vd)):
 			if randf() < 0.25:
 				continue
-			
+
 			var j_perc: float = float(j) / float(floor(vd))
 			var pos_x         = tl.x + i_perc * h
 			var pos_y         = tl.y + j_perc * v
