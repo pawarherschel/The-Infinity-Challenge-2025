@@ -1,0 +1,72 @@
+[gd_scene load_steps=5 format=3 uid="uid://boiduixpdk3y4"]
+
+[ext_resource type="Script" uid="uid://di05a5cec5fkw" path="res://scenes/gameplay/pachinko/ball.gd" id="1_ynls3"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ynls3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6x5j1"]
+radius = 32.0
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ynls3"]
+size = Vector2(64, 64)
+
+[node name="Pachinko" type="Node2D"]
+
+[node name="PlayArea" type="Polygon2D" parent="."]
+position = Vector2(576, 16)
+polygon = PackedVector2Array(-320, 176, -320, 616, 320, 616, 320, 176, 0.00012207, -1.90735e-06)
+uv = PackedVector2Array(376, 208, 376, 640, 952, 630, 935, 206, 672, 34)
+
+[node name="Walls" type="Node2D" parent="PlayArea"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="PlayArea/Walls" groups=["PlayArea"]]
+position = Vector2(-160, 88)
+rotation = 2.61799
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayArea/Walls/StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_ynls3")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="PlayArea/Walls" groups=["PlayArea"]]
+position = Vector2(160, 88)
+rotation = -2.64091
+scale = Vector2(1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayArea/Walls/StaticBody2D2"]
+shape = SubResource("WorldBoundaryShape2D_ynls3")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="PlayArea/Walls" groups=["PlayArea"]]
+position = Vector2(7.99994, 616)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayArea/Walls/StaticBody2D3"]
+shape = SubResource("WorldBoundaryShape2D_ynls3")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="PlayArea/Walls" groups=["PlayArea"]]
+position = Vector2(-320, 440)
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayArea/Walls/StaticBody2D4"]
+shape = SubResource("WorldBoundaryShape2D_ynls3")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="PlayArea/Walls" groups=["PlayArea"]]
+position = Vector2(320, 432)
+rotation = -1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayArea/Walls/StaticBody2D5"]
+shape = SubResource("WorldBoundaryShape2D_ynls3")
+
+[node name="Ball" type="RigidBody2D" parent="."]
+z_index = 1
+position = Vector2(688, 200)
+lock_rotation = true
+continuous_cd = 2
+contact_monitor = true
+max_contacts_reported = 5
+script = ExtResource("1_ynls3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
+shape = SubResource("CircleShape2D_6x5j1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ball"]
+texture = SubResource("PlaceholderTexture2D_ynls3")
+
+[connection signal="body_entered" from="Ball" to="Ball" method="_on_body_entered"]
