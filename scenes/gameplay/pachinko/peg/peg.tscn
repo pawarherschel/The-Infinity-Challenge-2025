@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dee2rsnwhg0sb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oiu4r"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_oiu4r"]
+size = Vector2(20, 20)
+
+[node name="Peg" type="StaticBody2D" groups=["Peg"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_oiu4r")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+texture = SubResource("PlaceholderTexture2D_oiu4r")

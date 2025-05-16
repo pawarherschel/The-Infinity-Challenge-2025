@@ -12,22 +12,22 @@ func _ready():
 
 
 func _on_PlayButton_pressed() -> void:
-	var params = {
-		"show_progress_bar": true,
-		"a_number": 10,
-		"a_string": "Ciao!",
-		"an_array": [1, 2, 3, 4],
-		"a_dict": {
-			"name": "test",
-			"val": 15
-		},
-	}
-	Game.change_scene_to_file("res://scenes/gameplay/gameplay.tscn", params)
+	#	var params = {
+	#		"show_progress_bar": true,
+	#		"a_number": 10,
+	#		"a_string": "Ciao!",
+	#		"an_array": [1, 2, 3, 4],
+	#		"a_dict": {
+	#			"name": "test",
+	#			"val": 15
+	#		},
+	#	}
+	Game.change_scene_to_file("res://scenes/gameplay/pachinko/pachinko.tscn")
 
 
 func _on_ExitButton_pressed() -> void:
 	# gently shutdown the game
-	var transitions = get_node_or_null("/root/Transitions")
+	var transitions: Node = get_node_or_null("/root/Transitions")
 	if transitions:
 		transitions.fade_in({
 			'show_progress_bar': false

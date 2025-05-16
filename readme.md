@@ -36,12 +36,12 @@ You have 2 options:
 ## Used by
 
 | Logo                                                                                                                                            | Godot | Title                               | Link                                                                                                                                                                                                                   |
-| ----------------------------------------------------------------------------------------------------------------------------------------------- | ----- | ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|-------------------------------------------------------------------------------------------------------------------------------------------------|-------|-------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | ![YouAreUto icon](https://play-lh.googleusercontent.com/lL54YNps-UPuDONDHfy3pmn8_aVUZGMorHJcDArimJWCQKjjNax0QMxpiAWCc5PUPbU=s100-rw)            | 3.x   | **YouAreUto** (2019)                | [Android](https://play.google.com/store/apps/details?id=com.youare.uto), [iOS](https://apps.apple.com/app/brain-game-teaser-youareuto/id1590561597#?platform=iphone), [GitHub](https://github.com/YouAreUto/YouAreUto) |
 | ![Defending Todot icon](https://imgur.com/Bn10XAf.png)                                                                                          | 3.x   | **Defending Todot** (2020)          | [HTML5](https://crystal-bit.github.io/defending-todot/), [GitHub](https://github.com/crystal-bit/defending-todot)                                                                                                      |
 | ![Karooto No Gase icon](https://play-lh.googleusercontent.com/sWgjV9dJxa1jKina0mNbU3fGmqA4zuqtRWXfhn_dfEK6reW90GH1uz0wsai1SG898bOZ=s100-rw)     | 3.x   | **Karooto No Gase** (2021)          | [Android](https://play.google.com/store/apps/details?id=org.calalinta.karootonogase), [Itch.io](https://calalinta.itch.io/)                                                                                            |
 | ![Godot Game Template Demo](https://play-lh.googleusercontent.com/aOVexQckoyjN2WJp_puq8ifTr2TnWwJ-cNw6iflcH0IpQYp04m_ChTd0jwkCKalz5wVM=s100-rw) | 3.x   | **demo-godot-game-template** (2021) | [Android](https://play.google.com/store/apps/details?id=org.crystalbit.godottemplate), [GitHub](https://github.com/crystal-bit/demo-godot-game-template)                                                               |
-| ![Pizza Poison Logo](https://github.com/user-attachments/assets/8f794de0-dcf8-4f8f-b29c-f1c619ba51d2)                                                                                                                                           | 4.3   | **Pizza Poison** (2025)             | [Itch.io](https://spesknight.itch.io/pizza-poison)                                                                                                                                                                     |
+| ![Pizza Poison Logo](https://github.com/user-attachments/assets/8f794de0-dcf8-4f8f-b29c-f1c619ba51d2)                                           | 4.3   | **Pizza Poison** (2025)             | [Itch.io](https://spesknight.itch.io/pizza-poison)                                                                                                                                                                     |
 
 # How to...
 
@@ -88,7 +88,7 @@ func pre_start(params):
 They are called in this order:
 
 | method              | description                                                                                                                 |
-| ------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+|---------------------|-----------------------------------------------------------------------------------------------------------------------------|
 | `_ready()`          | gets called when the graphic transition covers the screen                                                                   |
 | `pre_start(params)` | gets called immediately after \_ready, it receives params passed via Game.change_scene(scene_path, params)                  |
 | `start`             | it's called as soon as the graphic transition finishes. It's a good place to activate gameplay logic, enemy AI, timers, ... |
@@ -118,12 +118,12 @@ $Sprite.position = Game.size / 2
 # Conventions and project structure
 
 - `assets/`
-  - Contains textures, sprites, sounds, music, fonts, ...
+    - Contains textures, sprites, sounds, music, fonts, ...
 - `builds/`
-  - output directory for game builds (ignored by .gitignore and .gdignore)
+    - output directory for game builds (ignored by .gitignore and .gdignore)
 - `scenes/`
-  - Contains Godot scenes (both entities, reusable scenes and "game screen" scenes)
-  - Scene folders can contain `.gd` scripts or resources used by the scene
+    - Contains Godot scenes (both entities, reusable scenes and "game screen" scenes)
+    - Scene folders can contain `.gd` scripts or resources used by the scene
 
 Mostly inspired by the official [Godot Engine guidelines][l1]:
 
@@ -185,6 +185,7 @@ If you are using Github you can take advantage of:
 2. manual exports via Github CI (see [dispatch-export.yml][ci-dispatch] )
 
 [ci-push-export]: ./.github/workflows/push-export.yml
+
 [ci-dispatch]: ./.github/workflows/push-export.yml
 
 You can read more on [Wiki - Continuos Integration][wiki_ci]
@@ -217,15 +218,15 @@ Also many tools were already available in the open source community, see the [Th
 # Thanks
 
 - For support & inspiration:
-  - All the [contributors](https://github.com/crystal-bit/godot-game-template/graphs/contributors)
-  - Crystal Bit community
-  - GameLoop.it
-  - Godot Engine Italia
-  - Godot Engine
+    - All the [contributors](https://github.com/crystal-bit/godot-game-template/graphs/contributors)
+    - Crystal Bit community
+    - GameLoop.it
+    - Godot Engine Italia
+    - Godot Engine
 - For their work on free and open source software:
-  - [aBARICHELLO](https://github.com/aBARICHELLO/godot-ci)
-  - [croconut](https://github.com/croconut/godot-multi-builder)
-  - [josephbmanley](https://github.com/josephbmanley)
-  - [GDQuest](https://github.com/GDquest)
-  - [Scony](https://github.com/Scony)
-  - [myood](https://github.com/myood)
+    - [aBARICHELLO](https://github.com/aBARICHELLO/godot-ci)
+    - [croconut](https://github.com/croconut/godot-multi-builder)
+    - [josephbmanley](https://github.com/josephbmanley)
+    - [GDQuest](https://github.com/GDquest)
+    - [Scony](https://github.com/Scony)
+    - [myood](https://github.com/myood)

@@ -2,7 +2,7 @@ class_name SceneData
 extends RefCounted
 
 var path: String = ""
-var params = null
+var params       = null
 
 
 func _to_string():

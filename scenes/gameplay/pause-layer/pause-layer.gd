@@ -6,7 +6,6 @@ extends CanvasLayer
 @onready var label = $MarginContainer/Control/Label
 @onready var pause_options = $MarginContainer/Control/VBoxOptions
 @onready var color_rect = $ColorRect
-
 @onready var nodes_grp1 = [pause_button, label] # should be visible during gamemplay and hidden during pause
 @onready var nodes_grp2 = [pause_options, color_rect] # should be visible only in pause menu
 

@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://boiduixpdk3y4"]
+[gd_scene load_steps=6 format=3 uid="uid://boiduixpdk3y4"]
 
+[ext_resource type="PackedScene" uid="uid://dee2rsnwhg0sb" path="res://scenes/gameplay/pachinko/peg/peg.tscn" id="1_vtgxm"]
 [ext_resource type="Script" uid="uid://di05a5cec5fkw" path="res://scenes/gameplay/pachinko/ball.gd" id="1_ynls3"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ynls3"]
@@ -29,7 +30,6 @@ shape = SubResource("WorldBoundaryShape2D_ynls3")
 [node name="StaticBody2D2" type="StaticBody2D" parent="PlayArea/Walls" groups=["PlayArea"]]
 position = Vector2(160, 88)
 rotation = -2.64091
-scale = Vector2(1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayArea/Walls/StaticBody2D2"]
 shape = SubResource("WorldBoundaryShape2D_ynls3")
@@ -53,6 +53,38 @@ rotation = -1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayArea/Walls/StaticBody2D5"]
 shape = SubResource("WorldBoundaryShape2D_ynls3")
+
+[node name="Pegs" type="Node2D" parent="PlayArea"]
+
+[node name="Peg" parent="PlayArea/Pegs" instance=ExtResource("1_vtgxm")]
+position = Vector2(-248, 304)
+
+[node name="Peg3" parent="PlayArea/Pegs" instance=ExtResource("1_vtgxm")]
+position = Vector2(-96, 304)
+
+[node name="Peg5" parent="PlayArea/Pegs" instance=ExtResource("1_vtgxm")]
+position = Vector2(48, 304)
+
+[node name="Peg7" parent="PlayArea/Pegs" instance=ExtResource("1_vtgxm")]
+position = Vector2(208, 304)
+
+[node name="Peg9" parent="PlayArea/Pegs" instance=ExtResource("1_vtgxm")]
+position = Vector2(-168, 384)
+
+[node name="Peg11" parent="PlayArea/Pegs" instance=ExtResource("1_vtgxm")]
+position = Vector2(-8, 384)
+
+[node name="Peg13" parent="PlayArea/Pegs" instance=ExtResource("1_vtgxm")]
+position = Vector2(144, 384)
+
+[node name="Peg15" parent="PlayArea/Pegs" instance=ExtResource("1_vtgxm")]
+position = Vector2(-248, 488)
+
+[node name="Peg17" parent="PlayArea/Pegs" instance=ExtResource("1_vtgxm")]
+position = Vector2(16, 488)
+
+[node name="Peg19" parent="PlayArea/Pegs" instance=ExtResource("1_vtgxm")]
+position = Vector2(208, 472)
 
 [node name="Ball" type="RigidBody2D" parent="."]
 z_index = 1

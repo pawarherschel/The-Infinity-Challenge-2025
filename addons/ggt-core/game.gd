@@ -2,7 +2,6 @@
 # Eg: `Game.change_scene("res://scenes/gameplay/gameplay.tscn)`
 extends Node
 
-
 var size: get = get_size
 
 

@@ -10,15 +10,15 @@ extends Node
 
 signal change_started
 signal change_finished
-
-var _params = {} # params caching
+var _params             = {} # params caching
 var _loading_start_time = 0
 
 @onready var transitions = get_node("/root/Transitions")
 @onready var _history = preload("res://addons/ggt-core/scenes/scenes-history.gd").new()
 @onready
 var _loader_mt = preload("res://addons/ggt-core/utils/resource_multithread_loader.gd").new()
-var config = preload("res://addons/ggt-core/config.tres")
+
+var config     = preload("res://addons/ggt-core/config.tres")
 
 
 func _ready():

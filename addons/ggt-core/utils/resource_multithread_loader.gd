@@ -2,9 +2,7 @@ extends RefCounted
 
 signal resource_loaded(res)
 signal resource_stage_loaded(progress_percentage)
-
 const SIMULATED_DELAY_MS = 32
-
 var thread
 var stages_amount: int
 
@@ -25,7 +23,7 @@ func _thread_load(path):
 	if status != OK:
 		push_error(status, "threaded resource failed")
 		return
-	var res = null
+	var res          = null
 	var progress_arr = []
 
 	while true:
@@ -53,6 +51,6 @@ func _thread_done(resource):
 	emit_signal("resource_loaded", resource)
 
 
-#func _exit_tree():
-#	if thread and thread.is_alive():
-#		thread.wait_to_finish()
+	#func _exit_tree():
+	#	if thread and thread.is_alive():
+	#		thread.wait_to_finish()

@@ -7,13 +7,11 @@ signal progress_bar_filled
 signal transition_started(anim_name)
 signal transition_finished(anim_name)
 signal transition_covered_screen
-
-
 @onready var anim: AnimationPlayer = $AnimationPlayer
 @onready var progress: Control = $ColorRect/MarginContainer/Progress
 
 var target_progress: float = 0.0
-var config = preload("res://addons/ggt-core/config.tres")
+var config                 = preload("res://addons/ggt-core/config.tres")
 
 
 func _ready():

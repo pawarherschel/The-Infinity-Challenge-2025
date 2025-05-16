@@ -1,6 +1,6 @@
 extends RefCounted
 
-var config = preload("res://addons/ggt-core/config.tres")
+var config   = preload("res://addons/ggt-core/config.tres")
 var _history = []
 
 
