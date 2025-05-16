@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5g5wchnj2yxq"]
+
+[ext_resource type="Script" uid="uid://di05a5cec5fkw" path="res://scenes/gameplay/pachinko/ball.gd" id="1_h18yt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6x5j1"]
+radius = 32.0
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ynls3"]
+size = Vector2(64, 64)
+
+[node name="Ball" type="RigidBody2D"]
+z_index = 1
+collision_layer = 3
+collision_mask = 3
+continuous_cd = 2
+contact_monitor = true
+max_contacts_reported = 5
+script = ExtResource("1_h18yt")
+
+[node name="BallCollider" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_6x5j1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_ynls3")
