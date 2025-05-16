@@ -18,7 +18,7 @@ var _loading_start_time = 0
 @onready
 var _loader_mt = preload("res://addons/ggt-core/utils/resource_multithread_loader.gd").new()
 
-var config     = preload("res://addons/ggt-core/config.tres")
+var config = preload("res://addons/ggt-core/config.tres")
 
 
 func _ready():
