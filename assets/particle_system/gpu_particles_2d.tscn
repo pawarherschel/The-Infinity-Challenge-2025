@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://0jojcnd48e14"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_h18yt"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_h18yt"]
+particle_flag_align_y = true
+particle_flag_rotate_y = true
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(1, 0, 1)
+emission_shape = 2
+emission_sphere_radius = 1.0
+spread = 10.0
+initial_velocity_min = -1000.0
+initial_velocity_max = 1000.0
+angular_velocity_min = -1.60933e-05
+angular_velocity_max = -1.60933e-05
+radial_velocity_min = -2.23517e-05
+radial_velocity_max = 1000.0
+gravity = Vector3(0, 98, 0)
+attractor_interaction_enabled = false
+scale_min = 0.0
+scale_max = 0.01
+
+[node name="GPUParticles2D" type="GPUParticles2D"]
+emitting = false
+amount = 10
+texture = SubResource("NoiseTexture2D_h18yt")
+lifetime = 0.1
+interp_to_end = 1.0
+one_shot = true
+explosiveness = 1.0
+trail_enabled = true
+trail_lifetime = 0.2
+process_material = SubResource("ParticleProcessMaterial_h18yt")

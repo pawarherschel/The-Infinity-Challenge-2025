@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bddi5y45ah7g0"]
+
+[ext_resource type="Script" uid="uid://bh1flsxhbcbin" path="res://scenes/gameplay/auto_battler/enemy/enemy.gd" id="1_htf52"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0b7vk"]
+
+[node name="Enemy" type="Sprite2D"]
+scale = Vector2(5, 5)
+texture = SubResource("PlaceholderTexture2D_0b7vk")
+script = ExtResource("1_htf52")

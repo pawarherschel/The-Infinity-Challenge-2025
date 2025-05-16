@@ -1,3 +1,47 @@
-[gd_scene format=3 uid="uid://nb2uco0ay2cu"]
+[gd_scene load_steps=6 format=3 uid="uid://nb2uco0ay2cu"]
 
-[node name="AutoBattler" type="Node2D"]
+[ext_resource type="Script" uid="uid://nx72tavkvr03" path="res://scenes/gameplay/auto_battler/auto_battler.gd" id="1_2nwi4"]
+[ext_resource type="PackedScene" uid="uid://k5nd0kvy2de2" path="res://scenes/gameplay/auto_battler/player/player.tscn" id="1_i5lxe"]
+[ext_resource type="Script" uid="uid://d27ck4o6r0eev" path="res://scenes/gameplay/auto_battler/enemy_manager.gd" id="3_2nwi4"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_asl5j"]
+size = Vector2(1152, 70)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_asl5j"]
+normal = Vector2(0, 1)
+distance = -30.0
+
+[node name="AutoBattler" type="Node2D" groups=["enemy"]]
+script = ExtResource("1_2nwi4")
+
+[node name="Floor" type="Sprite2D" parent="."]
+position = Vector2(576, 608)
+texture = SubResource("PlaceholderTexture2D_asl5j")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Floor"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_asl5j")
+
+[node name="Player" parent="." instance=ExtResource("1_i5lxe")]
+unique_name_in_owner = true
+position = Vector2(192, 512)
+
+[node name="PlayerAttackTimer" type="Timer" parent="Player"]
+unique_name_in_owner = true
+process_callback = 0
+autostart = true
+
+[node name="EnemyManager" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(896, 512)
+script = ExtResource("3_2nwi4")
+
+[node name="GameplayTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Player/PlayerAttackTimer" to="." method="_on_player_attack_timer_timeout"]
+[connection signal="timeout" from="GameplayTimer" to="." method="_on_gameplay_timer_timeout"]

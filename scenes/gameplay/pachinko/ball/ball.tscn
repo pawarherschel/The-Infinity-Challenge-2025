@@ -22,3 +22,5 @@ shape = SubResource("CircleShape2D_6x5j1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("PlaceholderTexture2D_ynls3")
+
+[connection signal="ball_stuck" from="." to="." method="_on_ball_stuck" flags=6]

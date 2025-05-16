@@ -16,7 +16,7 @@ func _ready() -> void:
 	pass
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	match state:
 		State.AIMING:
 			aimer.look_at(get_global_mouse_position())
@@ -30,8 +30,6 @@ func _process(delta: float) -> void:
 				aimer.queue_free()
 
 				self.add_child(ball)
-
-				print("meow, ", thingy)
 		State.FIRED:
 			pass
 	pass

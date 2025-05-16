@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://k5nd0kvy2de2"]
+
+[ext_resource type="Script" uid="uid://bplqymloixsl4" path="res://scenes/gameplay/auto_battler/player/player.gd" id="1_lmpl4"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ibyrb"]
+size = Vector2(128, 128)
+
+[node name="Player" type="Sprite2D"]
+texture = SubResource("PlaceholderTexture2D_ibyrb")
+script = ExtResource("1_lmpl4")
