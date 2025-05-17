@@ -1,12 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://c5g5wchnj2yxq"]
 
 [ext_resource type="Script" uid="uid://di05a5cec5fkw" path="res://scenes/gameplay/pachinko/ball.gd" id="1_h18yt"]
+[ext_resource type="Texture2D" uid="uid://d1mxfi23lwxjk" path="res://assets/sumo_ball/sumo.png" id="2_e3nvk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6x5j1"]
 radius = 32.0
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ynls3"]
-size = Vector2(64, 64)
 
 [node name="Ball" type="RigidBody2D"]
 z_index = 1
@@ -21,6 +19,8 @@ script = ExtResource("1_h18yt")
 shape = SubResource("CircleShape2D_6x5j1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("PlaceholderTexture2D_ynls3")
+position = Vector2(2.38419e-07, -8)
+scale = Vector2(0.171875, 0.171875)
+texture = ExtResource("2_e3nvk")
 
 [connection signal="ball_stuck" from="." to="." method="_on_ball_stuck" flags=6]

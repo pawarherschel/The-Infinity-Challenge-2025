@@ -1,10 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://k5nd0kvy2de2"]
 
 [ext_resource type="Script" uid="uid://bplqymloixsl4" path="res://scenes/gameplay/auto_battler/player/player.gd" id="1_lmpl4"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ibyrb"]
-size = Vector2(128, 128)
+[ext_resource type="Texture2D" uid="uid://d1qlbmuvfsdwr" path="res://assets/sumo_brawl/sumo_brawl.png" id="1_xnrcm"]
 
 [node name="Player" type="Sprite2D"]
-texture = SubResource("PlaceholderTexture2D_ibyrb")
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_xnrcm")
 script = ExtResource("1_lmpl4")

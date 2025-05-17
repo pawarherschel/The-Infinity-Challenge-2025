@@ -6,7 +6,7 @@ on:
       # - "feature/**"
 env:
   GODOT_VERSION: 4.4.1
-  EXPORT_NAME: "Sumo and Brawl"
+  EXPORT_NAME: "Balling and Brawling"
   ITCH_IO: true #set to true if you want to enable automatic itch.io deploy
 
 jobs:
