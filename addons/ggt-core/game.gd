@@ -9,7 +9,8 @@ func change_scene_to_file(new_scene: String, params = {}):
 	if not ResourceLoader.exists(new_scene):
 		push_error("Scene resource not found: ", new_scene)
 		return
-	Scenes.change_scene_multithread(new_scene, params)  # multi-thread
+	get_tree().change_scene_to_file(new_scene)
+	#Scenes.change_scene_multithread(new_scene, params)  # multi-thread
 
 
 # Restart the current scene

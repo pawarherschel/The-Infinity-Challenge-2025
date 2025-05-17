@@ -22,6 +22,7 @@ func _on_PlayButton_pressed() -> void:
 	#			"val": 15
 	#		},
 	#	}
+	#get_tree().change_scene_to_file("res://scenes/gameplay/pachinko/pachinko.tscn")
 	Game.change_scene_to_file("res://scenes/gameplay/pachinko/pachinko.tscn")
 
 

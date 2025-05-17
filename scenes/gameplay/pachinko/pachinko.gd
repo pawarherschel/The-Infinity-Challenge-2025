@@ -12,7 +12,8 @@ var state: State = State.AIMING
 
 
 func _ready() -> void:
-	aimer.add_point(Vector2.RIGHT * 200)
+	aimer.add_point(Vector2.RIGHT * 5000)
+	print("pachinko meow")
 	pass
 
 

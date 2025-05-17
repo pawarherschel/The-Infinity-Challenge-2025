@@ -36,6 +36,7 @@ unique_name_in_owner = true
 position = Vector2(-294, 562)
 
 [node name="Walls" type="Node2D" parent="PlayArea"]
+unique_name_in_owner = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="PlayArea/Walls" groups=["PlayArea"]]
 position = Vector2(-160, 88)
@@ -69,6 +70,7 @@ shape = SubResource("WorldBoundaryShape2D_ynls3")
 script = ExtResource("1_xokmi")
 
 [node name="LoseArea" type="Area2D" parent="PlayArea" groups=["PachinkoLoseArea"]]
+unique_name_in_owner = true
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("3_45fmj")
